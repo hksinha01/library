@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="img/libray.jpg">
+    <title>Noble Library</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body>
+    <div class="main-wrapper">
+
+        {{>header}}
+        {{>sidebar}}
+        <div class="page-wrapper">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="page-title">Edit Book</h4>
+                    </div>
+                </div>
+                <form action="/edit-books" method="POST">
+                    {{#each errors}}
+                    <div class="alert alert-danger">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        {{text}}
+                    </div>
+                    {{/each}}
+                    <div class="card-box">
+                        <h3 class="card-title">Basic Informations</h3>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="profile-basic" method="POST">
+                                    <div class="row">
+
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Book Number<span class="text-danger">*</span></label>
+                                                <input class="form-control" type="text" name="bookNumber"
+                                                    value="{{bookNumber}}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="focus-label">Title<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control floating" name="title"
+                                                    value="{{title}}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Author<span class="text-danger">*</span></label>
+                                                <input class="form-control" type="text" name="author"
+                                                    value="{{author}}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Excerpt<span class="text-danger">*</span></label>
+                                                <input class="form-control" type="text" name="excerpt"
+                                                    value="{{excerpt}}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>ISBN<span class="text-danger">*</span></label>
+                                                <input class="form-control" type="text" name="ISBN" value="{{ISBN}}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Category<span class="text-danger">*</span></label>
+                                                <input class="form-control" type="text" name="category"
+                                                    value="{{category}}" required>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Price<span class="text-danger">*</span></label>
+                                                <input class="form-control" type="text" name="price" value="{{price}}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Released At<span class="text-danger">*</span></label>
+                                                <div class="cal-icon">
+                                                    <input type="text" class="form-control datetimepicker"
+                                                        name="releasedAt" value="{{releasedAt}}" required>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center m-t-20">
+                            <button class="btn btn-primary submit-btn" type="submit">Save</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-overlay" data-reff=""></div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.slimscroll.js"></script>
+    <script src="js/select2.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/bootstrap-datetimepicker.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
